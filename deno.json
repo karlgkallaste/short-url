@@ -2,7 +2,11 @@
   "tasks": {
     "dev": "deno run --watch main.ts"
   },
+  "compilerOptions": {
+    "strict": true
+  },
   "imports": {
-    "@std/assert": "jsr:@std/assert@1"
+    "@std/assert": "jsr:@std/assert@1",
+    "http/": "https://deno.land/std@0.200.0/http/"
   }
 }
