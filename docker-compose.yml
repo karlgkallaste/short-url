@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine # Lightweight PostgreSQL image
+    container_name: postgres_container
+    ports:
+      - "5432:5432" # Map PostgreSQL to localhost:5432
+    environment:
+      POSTGRES_USER: admin     # Default PostgreSQL user
+      POSTGRES_PASSWORD: admin # Password for the user
+      POSTGRES_DB: mydatabase  # Default database created on startup
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Persist data across container restarts
+
+volumes:
+  postgres_data:
